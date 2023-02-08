@@ -1,6 +1,7 @@
 [build]
-  command = "cd exampleSite && hugo"
+  command = "hugo"
   publish = "exampleSite/public"
+
 
 [build.environment]
   HUGO_VERSION = "0.101.0"
