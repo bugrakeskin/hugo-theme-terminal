@@ -1,4 +1,4 @@
-baseurl = "https://incomparable-blini-609712.netlify.app"
+#baseurl = "https://incomparable-blini-609712.netlify.app"
 languageCode = "en-us"
 #theme = "hugo-theme-terminal"
 paginate = 5
