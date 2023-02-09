@@ -1,0 +1,12 @@
+[build]
+  publish = "site/public"
+  command = "cd site && hugo"
+
+[build.environment]
+  HUGO_VERSION = "0.90.0"
+  HUGO_BASEURL = "https://incomparable-blini-609712.netlify.app"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "*"
