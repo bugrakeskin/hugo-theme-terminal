@@ -1,12 +1,35 @@
 [build]
-  publish = "site/public"
-  command = "cd site && hugo"
+publish = "site/public"
+command = "cd site && hugo --gc --minify"
 
-[build.environment]
-  HUGO_VERSION = "0.90.0"
-  HUGO_BASEURL = "https://incomparable-blini-609712.netlify.app"
+[context.production.environment]
+HUGO_VERSION = "0.110.0"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
 
-[[headers]]
-  for = "/*"
-    [headers.values]
-      Access-Control-Allow-Origin = "*"
+[context.split1]
+command = "cd site && hugo --gc --minify --enableGitInfo"
+
+[context.split1.environment]
+HUGO_VERSION = "0.110.0"
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "cd site && hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.110.0"
+
+[context.branch-deploy]
+command = "cd site && hugo --gc --minify -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.110.0"
+
+[context.next.environment]
+HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+from = "/npmjs/*"
+to = "/npmjs/"
+status = 200
