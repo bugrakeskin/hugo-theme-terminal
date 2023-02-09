@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://63e49bf55fb3585301b3a70e--fastidious-banoffee-592fd1.netlify.app"
 languageCode = "en-us"
 #theme = "hugo-theme-terminal"
 paginate = 5
